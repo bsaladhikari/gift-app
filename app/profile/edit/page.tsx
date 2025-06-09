@@ -123,6 +123,18 @@ export default function EditProfilePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden flex flex-col items-center justify-center py-12 px-4">
+      {/* Navigation Links */}
+      <nav className="relative z-10 w-full max-w-2xl mb-8">
+        <ul className="flex justify-center space-x-6">
+          <li>
+            <Link href="/profile/edit" className="text-lg font-semibold text-purple-600 hover:text-purple-800 transition-colors duration-300 border-b-2 border-purple-600 pb-1">
+              Edit Profile
+            </Link>
+          </li>
+          {/* Add more profile navigation links here if needed */}
+        </ul>
+      </nav>
+
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -270,4 +282,4 @@ export default function EditProfilePage() {
       </div>
     </div>
   )
-} 
+}

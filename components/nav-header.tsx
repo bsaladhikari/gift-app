@@ -42,7 +42,6 @@ export default function NavHeader() {
         { name: "Home", path: "/", icon: <Home className="h-4 w-4" /> },
         { name: "Find Gifts", path: "/personalize", icon: <Sparkles className="h-4 w-4" /> },
         { name: "Gift History", path: "/history", icon: <History className="h-4 w-4" /> },
-        { name: "Recipients", path: "/recipients", icon: <BookOpen className="h-4 w-4" /> },
       ]
 
   const isActive = (path: string) => {

@@ -17,6 +17,7 @@ END $$;
 CREATE OR REPLACE FUNCTION public.is_admin(user_id UUID)
 RETURNS BOOLEAN AS $$
 BEGIN
+  SET search_path = "$user", public;
   RETURN EXISTS (
     SELECT 1 FROM public.profiles 
     WHERE id = user_id AND is_admin = true

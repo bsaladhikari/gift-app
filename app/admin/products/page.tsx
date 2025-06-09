@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge"
 import { X, Plus, Save, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import type { User } from "@supabase/supabase-js"
+import { useToast } from "@/components/ui/use-toast"
 
 interface Product {
   id?: string
@@ -36,6 +37,7 @@ interface Product {
   personality_traits: string[]
   is_active: boolean
   priority: number
+  created_by?: string
 }
 
 const OCCASIONS = [
@@ -116,6 +118,8 @@ export default function AdminPage() {
   const [totalProducts, setTotalProducts] = useState(0);
   const [filterCategory, setFilterCategory] = useState("all");
   const [filterActive, setFilterActive] = useState("all");
+
+  const { toast } = useToast();
 
   const [formData, setFormData] = useState<Product>({
     title: "",
@@ -207,33 +211,63 @@ export default function AdminPage() {
   }
 
   const handleSave = async () => {
-    setSaving(true)
+    setSaving(true);
+    setError(""); // Clear previous errors
+
     try {
-      const productData = {
+      const productData: Product = {
         ...formData,
         created_by: user?.id,
-      }
+      };
 
-      let result
-      if (editingProduct?.id) {
-        result = await supabase.from("products").update(productData).eq("id", editingProduct.id).select()
+      let result: any; // Initialize result to avoid 'possibly undefined' error
+      const isNewProduct = !editingProduct?.id; // Determine if it's a new product or an edit
+
+      if (isNewProduct) {
+        result = await supabase.from("products").insert([productData]).select();
       } else {
-        result = await supabase.from("products").insert([productData]).select()
+        // If not a new product, editingProduct.id should exist
+        result = await supabase.from("products").update(productData).eq("id", editingProduct!.id).select();
       }
 
-      if (result.error) throw result.error
+      if (result.error) {
+        throw result.error;
+      }
 
-      await loadProducts()
-      resetForm()
-      setShowForm(false)
-      alert(editingProduct ? "Product updated!" : "Product created!")
-    } catch (error) {
-      console.error("Error saving product:", error)
-      alert("Error saving product")
+      const savedProduct = result.data ? result.data[0] : null;
+
+      if (savedProduct) {
+        // Optimistic UI update: update state directly instead of re-fetching all products
+        setProducts((prevProducts) => {
+          if (isNewProduct) {
+            return [savedProduct, ...prevProducts];
+          } else {
+            return prevProducts.map((p) => (p.id === savedProduct.id ? savedProduct : p));
+          }
+        });
+
+        toast({
+          title: isNewProduct ? "Product created!" : "Product updated!",
+          description: `Product "${savedProduct.title}" has been successfully ${isNewProduct ? "created" : "updated"}.`,
+        });
+
+        resetForm();
+        setShowForm(false);
+      } else {
+        throw new Error("No product data returned after save.");
+      }
+    } catch (error: any) {
+      console.error("Error saving product:", error);
+      setError(error.message || "An unexpected error occurred.");
+      toast({
+        title: "Error saving product",
+        description: error.message || "Please try again.",
+        variant: "destructive",
+      });
     } finally {
-      setSaving(false)
+      setSaving(false);
     }
-  }
+  };
 
   const handleEdit = (product: Product) => {
     setEditingProduct(product)

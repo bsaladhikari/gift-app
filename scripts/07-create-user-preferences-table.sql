@@ -33,10 +33,11 @@ CREATE POLICY "Users can manage their own preferences" ON user_preferences
 CREATE OR REPLACE FUNCTION update_user_preferences_updated_at()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.updated_at = NOW();
-    RETURN NEW;
+  SET search_path = "$user", public;
+  NEW.updated_at = NOW();
+  RETURN NEW;
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 CREATE TRIGGER update_user_preferences_updated_at
     BEFORE UPDATE ON user_preferences

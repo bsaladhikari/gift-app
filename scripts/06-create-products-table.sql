@@ -54,10 +54,11 @@ CREATE POLICY "Authenticated users can manage products" ON products
 CREATE OR REPLACE FUNCTION update_products_updated_at()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.updated_at = NOW();
-    RETURN NEW;
+  SET search_path = "$user", public;
+  NEW.updated_at = NOW();
+  RETURN NEW;
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 CREATE TRIGGER update_products_updated_at
     BEFORE UPDATE ON products

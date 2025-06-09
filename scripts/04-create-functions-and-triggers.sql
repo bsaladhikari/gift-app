@@ -2,6 +2,7 @@
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS TRIGGER AS $$
 BEGIN
+  SET search_path = "$user", public;
   INSERT INTO public.profiles (id, email, full_name)
   VALUES (
     NEW.id,
@@ -22,10 +23,11 @@ CREATE TRIGGER on_auth_user_created
 CREATE OR REPLACE FUNCTION public.handle_updated_at()
 RETURNS TRIGGER AS $$
 BEGIN
+  SET search_path = "$user", public;
   NEW.updated_at = NOW();
   RETURN NEW;
 END;
-$$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 -- Add updated_at triggers
 CREATE TRIGGER profiles_updated_at
