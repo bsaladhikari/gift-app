@@ -5,7 +5,7 @@
 ### 1. Update Your Associates ID
 In `/lib/amazon-products.ts`, change this line:
 \`\`\`typescript
-const AMAZON_ASSOCIATE_ID = "giftgenie-20" // ⚠️ CHANGE THIS TO YOUR ACTUAL ID
+const AMAZON_ASSOCIATE_ID = "luxegiftai-20" // ⚠️ CHANGE THIS TO YOUR ACTUAL ID
 \`\`\`
 
 ### 2. How to Find Your Associates ID

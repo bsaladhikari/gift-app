@@ -1,6 +1,6 @@
-# Complete Supabase Setup for GiftGenie
+# Complete Supabase Setup for LuxegiftAI
 
-This document outlines the complete Supabase setup we've implemented for the GiftGenie application, including all database tables, authentication, and admin functionality.
+This document outlines the complete Supabase setup we've implemented for the LuxegiftAI application, including all database tables, authentication, and admin functionality.
 
 ## Database Schema Overview
 
@@ -376,4 +376,4 @@ scripts/
   └── 07-create-user-preferences-table.sql
 \`\`\`
 
-This setup provides a complete foundation for the GiftGenie application with user authentication, admin management, and intelligent product matching.
+This setup provides a complete foundation for the LuxegiftAI application with user authentication, admin management, and intelligent product matching.

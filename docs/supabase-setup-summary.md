@@ -1,6 +1,6 @@
-# Supabase Integration for GiftGenie
+# Supabase Integration for LuxegiftAI
 
-This document outlines the Supabase setup we've implemented for the GiftGenie application.
+This document outlines the Supabase setup we've implemented for the LuxegiftAI application.
 
 ## Database Schema
 

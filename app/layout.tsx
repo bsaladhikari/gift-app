@@ -8,7 +8,7 @@ import { AuthProvider } from "@/components/auth-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "GiftGenie - AI-Powered Gift Recommendations",
+  title: "LuxegiftAI - AI-Powered Gift Recommendations",
   description: "Find the perfect gift for any occasion with AI-powered recommendations",
   generator: 'v0.dev'
 }

@@ -399,14 +399,14 @@ export default function GiftHistoryPage() {
               Privacy Policy
             </a>
             <a
-              href="mailto:support@giftgenie.com"
+              href="mailto:support@luxegiftai.com"
               className="text-gray-600 hover:text-purple-600 font-medium transition-colors duration-300"
             >
               Contact
             </a>
           </div>
           <p className="text-gray-600 font-medium">
-            &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+            &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
           </p>
         </div>
       </footer>

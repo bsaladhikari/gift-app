@@ -31,7 +31,7 @@ export default function TermsPage() {
             </h1>
 
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Please read these terms carefully before using GiftGenie
+              Please read these terms carefully before using LuxegiftAI
             </p>
 
             <div className="mt-6 text-sm text-gray-500">
@@ -51,8 +51,8 @@ export default function TermsPage() {
                   <h2 className="text-2xl font-bold text-gray-800 m-0">1. Introduction</h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Welcome to GiftGenie ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our
-                  website, mobile application, and services (collectively, the "Service") operated by GiftGenie Inc.
+                  Welcome to LuxegiftAI ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our
+                  website, mobile application, and services (collectively, the "Service") operated by LuxegiftAI Inc.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part
@@ -67,7 +67,7 @@ export default function TermsPage() {
                   <h2 className="text-2xl font-bold text-gray-800 m-0">2. Acceptance of Terms</h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  By creating an account or using GiftGenie, you confirm that you are at least 18 years old or have
+                  By creating an account or using LuxegiftAI, you confirm that you are at least 18 years old or have
                   parental consent, and you agree to comply with these Terms and all applicable laws and regulations.
                 </p>
               </div>
@@ -76,7 +76,7 @@ export default function TermsPage() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">3. Description of Service</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  GiftGenie is an AI-powered platform that provides personalized gift recommendations and generates
+                  LuxegiftAI is an AI-powered platform that provides personalized gift recommendations and generates
                   custom messages. Our services include:
                 </p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
@@ -124,7 +124,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">6. Third-Party Services</h2>
                 <p className="text-gray-700 leading-relaxed">
                   Our Service may contain links to third-party websites or services (such as Amazon) that are not owned
-                  or controlled by GiftGenie. We have no control over and assume no responsibility for the content,
+                  or controlled by LuxegiftAI. We have no control over and assume no responsibility for the content,
                   privacy policies, or practices of any third-party websites or services.
                 </p>
               </div>
@@ -134,7 +134,7 @@ export default function TermsPage() {
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">7. Intellectual Property</h2>
                 <p className="text-gray-700 leading-relaxed">
                   The Service and its original content, features, and functionality are and will remain the exclusive
-                  property of GiftGenie Inc. and its licensors. The Service is protected by copyright, trademark, and
+                  property of LuxegiftAI Inc. and its licensors. The Service is protected by copyright, trademark, and
                   other laws.
                 </p>
               </div>
@@ -155,7 +155,7 @@ export default function TermsPage() {
                   <h2 className="text-2xl font-bold text-gray-800 m-0">9. Disclaimers</h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  The Service is provided on an "AS IS" and "AS AVAILABLE" basis. GiftGenie makes no warranties,
+                  The Service is provided on an "AS IS" and "AS AVAILABLE" basis. LuxegiftAI makes no warranties,
                   expressed or implied, including:
                 </p>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 ml-4">
@@ -170,7 +170,7 @@ export default function TermsPage() {
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">10. Limitation of Liability</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  In no event shall GiftGenie, its directors, employees, partners, agents, suppliers, or affiliates be
+                  In no event shall LuxegiftAI, its directors, employees, partners, agents, suppliers, or affiliates be
                   liable for any indirect, incidental, special, consequential, or punitive damages, including without
                   limitation, loss of profits, data, use, goodwill, or other intangible losses.
                 </p>
@@ -211,7 +211,7 @@ export default function TermsPage() {
                   If you have any questions about these Terms of Service, please contact us at:
                 </p>
                 <div className="mt-4 p-4 bg-gray-50 rounded-xl">
-                  <p className="text-gray-700 font-medium">Email: legal@giftgenie.com</p>
+                  <p className="text-gray-700 font-medium">Email: legal@luxegiftai.com</p>
                   <p className="text-gray-700 font-medium">Address: 123 Innovation Drive, San Francisco, CA 94105</p>
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function TermsPage() {
       <footer className="relative z-10 container mx-auto px-4 py-12 text-center">
         <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/50 inline-block">
           <p className="text-gray-600 font-medium">
-            &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+            &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
           </p>
         </div>
       </footer>

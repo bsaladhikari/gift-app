@@ -209,7 +209,7 @@ export default function LandingPage() {
               </a>
             </div>
             <p className="text-gray-600 font-medium">
-              &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+              &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
             </p>
           </div>
         </footer>
@@ -370,7 +370,7 @@ export default function LandingPage() {
             </a>
           </div>
           <p className="text-gray-600 font-medium">
-            &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+            &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
           </p>
         </div>
       </footer>

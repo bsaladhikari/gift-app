@@ -99,7 +99,7 @@ export default function SignInPage() {
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-ping"></div>
             </div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              GiftGenie
+              LuxegiftAI
             </h1>
           </Link>
           <Link
@@ -345,7 +345,7 @@ export default function SignInPage() {
             </a>
           </div>
           <p className="text-gray-600 font-medium">
-            &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+            &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
           </p>
         </div>
       </footer>

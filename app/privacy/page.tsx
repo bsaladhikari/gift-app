@@ -51,7 +51,7 @@ export default function PrivacyPage() {
                   <h2 className="text-2xl font-bold text-gray-800 m-0">1. Introduction</h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  GiftGenie Inc. ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy
+                  LuxegiftAI Inc. ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy
                   explains how we collect, use, disclose, and safeguard your information when you use our website,
                   mobile application, and services.
                 </p>
@@ -263,7 +263,7 @@ export default function PrivacyPage() {
                   If you have any questions about this Privacy Policy or our data practices, please contact us:
                 </p>
                 <div className="p-4 bg-gray-50 rounded-xl">
-                  <p className="text-gray-700 font-medium">Email: privacy@giftgenie.com</p>
+                  <p className="text-gray-700 font-medium">Email: privacy@luxegiftai.com</p>
                   <p className="text-gray-700 font-medium">Address: 123 Innovation Drive, San Francisco, CA 94105</p>
                   <p className="text-gray-700 font-medium">Phone: (555) 123-4567</p>
                 </div>
@@ -277,7 +277,7 @@ export default function PrivacyPage() {
       <footer className="relative z-10 container mx-auto px-4 py-12 text-center">
         <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/50 inline-block">
           <p className="text-gray-600 font-medium">
-            &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+            &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
           </p>
         </div>
       </footer>

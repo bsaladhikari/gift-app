@@ -63,7 +63,7 @@ export default function NavHeader() {
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-ping"></div>
           </div>
           <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            GiftGenie
+            LuxegiftAI
           </h1>
         </Link>
 

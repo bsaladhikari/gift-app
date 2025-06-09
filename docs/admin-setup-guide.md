@@ -1,6 +1,6 @@
-# Admin Setup Guide for GiftGenie
+# Admin Setup Guide for LuxegiftAI
 
-This guide explains how to set up admin users for the GiftGenie application so they can access the admin panel and manage products.
+This guide explains how to set up admin users for the LuxegiftAI application so they can access the admin panel and manage products.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ This guide explains how to set up admin users for the GiftGenie application so t
 1. **Go to Supabase Dashboard**
    - Visit [supabase.com](https://supabase.com)
    - Sign in to your account
-   - Select your GiftGenie project
+   - Select your LuxegiftAI project
 
 2. **Navigate to Table Editor**
    - Click on "Table Editor" in the left sidebar

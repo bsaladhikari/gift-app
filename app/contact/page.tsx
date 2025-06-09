@@ -63,7 +63,7 @@ export default function ContactPage() {
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-ping"></div>
             </div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              GiftGenie
+              LuxegiftAI
             </h1>
           </Link>
           <Link
@@ -87,7 +87,7 @@ export default function ContactPage() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Have questions about GiftGenie? Need help finding the perfect gift? We're here to help make your
+              Have questions about LuxegiftAI? Need help finding the perfect gift? We're here to help make your
               gift-giving experience magical ✨
             </p>
           </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-gray-800">Email Us</h4>
-                      <p className="text-gray-600">support@giftgenie.com</p>
+                      <p className="text-gray-600">support@luxegiftai.com</p>
                       <p className="text-sm text-gray-500">We typically respond within 24 hours</p>
                     </div>
                   </div>
@@ -258,14 +258,14 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Frequently Asked Questions</h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">How does GiftGenie work?</h4>
+                    <h4 className="font-semibold text-gray-800 mb-2">How does LuxegiftAI work?</h4>
                     <p className="text-gray-600 text-sm">
                       Simply tell us about the recipient and occasion, and our AI will suggest personalized gift ideas
                       with custom messages.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">Is GiftGenie free to use?</h4>
+                    <h4 className="font-semibold text-gray-800 mb-2">Is LuxegiftAI free to use?</h4>
                     <p className="text-gray-600 text-sm">
                       Yes! You can get gift suggestions for free. Creating an account unlocks unlimited suggestions and
                       saves your history.
@@ -308,7 +308,7 @@ export default function ContactPage() {
             </a>
           </div>
           <p className="text-gray-600 font-medium">
-            &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+            &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
           </p>
         </div>
       </footer>

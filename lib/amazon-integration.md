@@ -1,4 +1,4 @@
-# Amazon Integration Guide for GiftGenie
+# Amazon Integration Guide for LuxegiftAI
 
 ## Current Implementation
 ✅ Amazon Associates affiliate links with real ASINs

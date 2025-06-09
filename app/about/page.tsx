@@ -76,7 +76,7 @@ export default function AboutPage() {
     {
       year: "2024",
       title: "Public Launch",
-      description: "Officially launched GiftGenie to help people find perfect gifts with AI assistance.",
+      description: "Officially launched LuxegiftAI to help people find perfect gifts with AI assistance.",
     },
     {
       year: "2024",
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                About GiftGenie
+                About LuxegiftAI
               </span>
             </h1>
 
@@ -131,7 +131,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  GiftGenie was born from a simple frustration: spending hours searching for the perfect gift, only to
+                  LuxegiftAI was born from a simple frustration: spending hours searching for the perfect gift, only to
                   settle for something generic. We believed there had to be a better way.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -139,7 +139,7 @@ export default function AboutPage() {
                   intelligent system that understands the nuances of human relationships and preferences.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Today, GiftGenie helps thousands of people find meaningful gifts that strengthen relationships and
+                  Today, LuxegiftAI helps thousands of people find meaningful gifts that strengthen relationships and
                   create lasting memories. Every recommendation is powered by advanced AI that considers personality,
                   interests, and the unique bond between giver and recipient.
                 </p>
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl"></div>
                 <img
                   src="/placeholder.svg?height=400&width=400"
-                  alt="GiftGenie team working"
+                  alt="LuxegiftAI team working"
                   className="relative w-full h-80 object-cover rounded-3xl shadow-2xl border-4 border-white/50"
                 />
               </div>
@@ -160,7 +160,7 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Values</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                The principles that guide everything we do at GiftGenie
+                The principles that guide everything we do at LuxegiftAI
               </p>
             </div>
 
@@ -213,7 +213,7 @@ export default function AboutPage() {
           <div className="mb-16">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">The passionate people behind GiftGenie's magic</p>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">The passionate people behind LuxegiftAI's magic</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -297,7 +297,7 @@ export default function AboutPage() {
       <footer className="relative z-10 container mx-auto px-4 py-12 text-center">
         <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/50 inline-block">
           <p className="text-gray-600 font-medium">
-            &copy; 2024 GiftGenie. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
+            &copy; 2024 LuxegiftAI. Making gift-giving magical <span className="inline-block animate-bounce">✨</span>
           </p>
         </div>
       </footer>
