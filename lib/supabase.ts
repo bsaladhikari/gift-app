@@ -85,6 +85,7 @@ export interface UserPreferences {
   budget_range: string | null
   interests: string[]
   personality_traits: string[]
+  price_range: string | null
   special_notes: string | null
   created_at: string
 }

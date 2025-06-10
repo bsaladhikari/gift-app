@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { getCurrentUser, supabase } from "@/lib/supabase"
+import { User } from "@supabase/supabase-js"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
@@ -62,7 +63,7 @@ const PERSONALITY_TRAITS = [
 
 export default function PreferencesPage() {
   const router = useRouter()
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
 

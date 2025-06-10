@@ -6,8 +6,30 @@ import { Badge } from "@/components/ui/badge"
 import { BarChart3, TrendingUp, Users, Package, Activity, Calendar } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 
+interface UserPreference {
+  occasion?: string
+  relationship?: string
+  interests?: string[]
+}
+
+interface Product {
+  category?: string
+}
+
+interface CountData {
+  name: string
+  count: number
+}
+
 export default function AnalyticsPage() {
-  const [analytics, setAnalytics] = useState({
+  const [analytics, setAnalytics] = useState<{
+    userGrowth: any[]
+    popularOccasions: CountData[]
+    popularRelationships: CountData[]
+    popularInterests: CountData[]
+    productCategories: CountData[]
+    recentActivity: any[]
+  }>({
     userGrowth: [],
     popularOccasions: [],
     popularRelationships: [],
@@ -30,11 +52,11 @@ export default function AnalyticsPage() {
       const { data: products } = await supabase.from("products").select("*")
 
       // Process data for analytics
-      const occasionCounts = {}
-      const relationshipCounts = {}
-      const interestCounts = {}
+      const occasionCounts: Record<string, number> = {}
+      const relationshipCounts: Record<string, number> = {}
+      const interestCounts: Record<string, number> = {}
 
-      preferences?.forEach((pref) => {
+      preferences?.forEach((pref: UserPreference) => {
         // Count occasions
         if (pref.occasion) {
           occasionCounts[pref.occasion] = (occasionCounts[pref.occasion] || 0) + 1
@@ -46,37 +68,37 @@ export default function AnalyticsPage() {
         }
 
         // Count interests
-        pref.interests?.forEach((interest) => {
+        pref.interests?.forEach((interest: string) => {
           interestCounts[interest] = (interestCounts[interest] || 0) + 1
         })
       })
 
       // Convert to arrays and sort
       const popularOccasions = Object.entries(occasionCounts)
-        .map(([name, count]) => ({ name, count }))
+        .map(([name, count]) => ({ name, count: count as number }))
         .sort((a, b) => b.count - a.count)
         .slice(0, 5)
 
       const popularRelationships = Object.entries(relationshipCounts)
-        .map(([name, count]) => ({ name, count }))
+        .map(([name, count]) => ({ name, count: count as number }))
         .sort((a, b) => b.count - a.count)
         .slice(0, 5)
 
       const popularInterests = Object.entries(interestCounts)
-        .map(([name, count]) => ({ name, count }))
+        .map(([name, count]) => ({ name, count: count as number }))
         .sort((a, b) => b.count - a.count)
         .slice(0, 8)
 
       // Product categories
-      const categoryCounts = {}
-      products?.forEach((product) => {
+      const categoryCounts: Record<string, number> = {}
+      products?.forEach((product: Product) => {
         if (product.category) {
           categoryCounts[product.category] = (categoryCounts[product.category] || 0) + 1
         }
       })
 
       const productCategories = Object.entries(categoryCounts)
-        .map(([name, count]) => ({ name, count }))
+        .map(([name, count]) => ({ name, count: count as number }))
         .sort((a, b) => b.count - a.count)
 
       setAnalytics({

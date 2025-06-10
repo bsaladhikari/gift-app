@@ -7,8 +7,8 @@ import type { GiftProduct } from "@/lib/gift-products"
 interface GiftProductCardProps {
   product: GiftProduct
   showFullDescription?: boolean
-  onSave?: (productId: string) => void
-  onFavorite?: (productId: string) => void
+  onToggleSaved?: (productId: string) => void
+  onToggleFavorite?: (productId: string) => void
   isSaved?: boolean
   isFavorited?: boolean
 }
@@ -16,19 +16,19 @@ interface GiftProductCardProps {
 export default function GiftProductCard({
   product,
   showFullDescription = false,
-  onSave,
-  onFavorite,
+  onToggleSaved,
+  onToggleFavorite,
   isSaved = false,
   isFavorited = false,
 }: GiftProductCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
   const handleSave = () => {
-    if (onSave) onSave(product.id)
+    if (onToggleSaved) onToggleSaved(product.id)
   }
 
   const handleFavorite = () => {
-    if (onFavorite) onFavorite(product.id)
+    if (onToggleFavorite) onToggleFavorite(product.id)
   }
 
   return (
@@ -38,7 +38,7 @@ export default function GiftProductCard({
 
       {/* Action buttons */}
       <div className="absolute top-6 right-6 flex space-x-2 z-10">
-        {onFavorite && (
+        {onToggleFavorite && (
           <button
             onClick={handleFavorite}
             className={`p-2 rounded-full transition-all duration-300 ${
@@ -50,7 +50,7 @@ export default function GiftProductCard({
             <Heart className={`h-5 w-5 ${isFavorited ? "fill-current" : ""}`} />
           </button>
         )}
-        {onSave && (
+        {onToggleSaved && (
           <button
             onClick={handleSave}
             className={`p-2 rounded-full transition-all duration-300 ${
@@ -133,7 +133,7 @@ export default function GiftProductCard({
 
         {/* Action Buttons */}
         <div className="flex space-x-3 pt-4">
-          {onSave && (
+          {onToggleSaved && (
             <button
               onClick={handleSave}
               className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-xl transition-all duration-300 text-sm font-medium ${

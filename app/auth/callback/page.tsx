@@ -18,9 +18,9 @@ export default function AuthCallbackPage() {
         try {
           await supabase.auth.exchangeCodeForSession(code)
 
-          // If this is an email verification callback, redirect to signin
+          // If this is an email verification callback, redirect to personalize
           if (type === "signup") {
-            router.push("/signin?verified=true")
+            router.push("/personalize")
           } else {
             router.push("/")
           }

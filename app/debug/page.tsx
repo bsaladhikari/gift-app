@@ -7,11 +7,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabase"
 
+interface ProfileData {
+  full_name: string | null;
+  is_admin: boolean;
+  created_at: string;
+}
+
 export default function DebugPage() {
   const { user, profile } = useAuth()
   const [isAdmin, setIsAdmin] = useState(false)
   const [adminCheckLoading, setAdminCheckLoading] = useState(true)
-  const [profileData, setProfileData] = useState(null)
+  const [profileData, setProfileData] = useState<ProfileData | null>(null)
 
   useEffect(() => {
     if (user) {
@@ -27,7 +33,7 @@ export default function DebugPage() {
       const adminStatus = await isUserAdmin(user.id)
       setIsAdmin(adminStatus)
       console.log("Admin status:", adminStatus)
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error checking admin:", error)
     } finally {
       setAdminCheckLoading(false)
@@ -41,9 +47,9 @@ export default function DebugPage() {
       const { data, error } = await supabase.from("profiles").select("*").eq("id", user.id).single()
 
       if (error) throw error
-      setProfileData(data)
+      setProfileData(data as ProfileData)
       console.log("Profile data:", data)
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error loading profile:", error)
     }
   }
@@ -58,7 +64,7 @@ export default function DebugPage() {
       alert("Made admin successfully!")
       checkAdminStatus()
       loadProfile()
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error making admin:", error)
       alert("Error making admin: " + error.message)
     }

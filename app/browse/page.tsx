@@ -370,7 +370,7 @@ export default function BrowseIdeasPage() {
                   key={product.id}
                   product={product}
                   isSaved={savedIds.includes(product.id)}
-                  isFavorite={favoriteIds.includes(product.id)}
+                  isFavorited={favoriteIds.includes(product.id)}
                   onToggleSaved={() => toggleSaved(product.id)}
                   onToggleFavorite={() => toggleFavorite(product.id)}
                 />

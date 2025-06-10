@@ -7,6 +7,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Heart, Star, Loader2 } from "lucide-react"
+import { User } from "@supabase/supabase-js"
+import { UserPreferences } from "@/lib/supabase"
 
 interface Product {
   id: string
@@ -20,14 +22,21 @@ interface Product {
   rating: number
   review_count: number
   features: string[]
+  occasions?: string[]
+  relationships?: string[]
+  age_groups?: string[]
+  genders?: string[]
+  interests?: string[]
+  price_ranges?: string[]
+  personality_traits?: string[]
 }
 
 export default function ResultsPage() {
   const router = useRouter()
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState<Product[]>([])
-  const [preferences, setPreferences] = useState(null)
+  const [preferences, setPreferences] = useState<UserPreferences | null>(null)
 
   useEffect(() => {
     checkAuth()
@@ -42,7 +51,7 @@ export default function ResultsPage() {
       }
       setUser(currentUser)
       await loadUserPreferences(currentUser.id)
-    } catch (error) {
+    } catch (error: any) {
       router.push("/signin")
     } finally {
       setLoading(false)
@@ -63,15 +72,15 @@ export default function ResultsPage() {
         return
       }
 
-      setPreferences(prefs)
-      await loadMatchingProducts(prefs)
-    } catch (error) {
+      setPreferences(prefs as UserPreferences)
+      await loadMatchingProducts(prefs as UserPreferences)
+    } catch (error: any) {
       console.error("Error loading preferences:", error)
       router.push("/preferences")
     }
   }
 
-  const loadMatchingProducts = async (prefs: any) => {
+  const loadMatchingProducts = async (prefs: UserPreferences) => {
     try {
       // Build query to match products based on user preferences
       const query = supabase.from("products").select("*").eq("is_active", true)
@@ -83,7 +92,7 @@ export default function ResultsPage() {
 
       // Filter products based on user preferences
       const matchingProducts =
-        data?.filter((product) => {
+        data?.filter((product: Product) => {
           let score = 0
 
           // Check occasion match
@@ -94,20 +103,20 @@ export default function ResultsPage() {
 
           // Check interest matches
           const interestMatches =
-            product.interests?.filter((interest) => prefs.interests?.includes(interest)).length || 0
+            product.interests?.filter((interest: string) => prefs.interests?.includes(interest)).length || 0
           score += interestMatches
 
           // Check personality trait matches
           const traitMatches =
-            product.personality_traits?.filter((trait) => prefs.personality_traits?.includes(trait)).length || 0
+            product.personality_traits?.filter((trait: string) => prefs.personality_traits?.includes(trait)).length || 0
           score += traitMatches
 
           // Check price range match
-          if (product.price_ranges?.includes(prefs.price_range)) score += 2
+          if (product.price_ranges?.includes(prefs.price_range || "")) score += 2
 
           // Check age group and gender (if specified in product)
-          if (product.age_groups?.includes(prefs.recipient_age_group)) score += 1
-          if (product.genders?.includes(prefs.recipient_gender) || product.genders?.includes("Any")) score += 1
+          if (product.age_groups?.includes(prefs.recipient_age_group || "")) score += 1
+          if (product.genders?.includes(prefs.recipient_gender || "") || product.genders?.includes("Any")) score += 1
 
           return score > 0
         }) || []
@@ -128,7 +137,7 @@ export default function ResultsPage() {
       })
 
       setProducts(matchingProducts.slice(0, 12)) // Limit to 12 results
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error loading products:", error)
     }
   }
